@@ -38,6 +38,14 @@ Ext.define('Slate.cbl.admin.view.skills.Grid', {
                 allowBlank: false
             }
         },{
+            dataIndex: 'Statement',
+            text: 'Statement',
+            flex: 5,
+            editor: {
+                xtype: 'textfield',
+                allowBlank: false
+            }
+        },{
             dataIndex: 'FirstLevelDemonstrationsRequired',
             text: 'ER\'S Level 9',
             editor: {
