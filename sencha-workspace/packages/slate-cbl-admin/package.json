@@ -270,6 +270,6 @@
      *      }
      */
     "requires": [
-
+        "slate-core-data"
     ]
 }

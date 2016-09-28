@@ -2,7 +2,7 @@
 Ext.define('Slate.cbl.admin.model.Skill', {
     extend: 'Ext.data.Model',
     requires: [
-        'Emergence.ext.proxy.Records',
+        'Slate.proxy.Records',
         'Ext.data.identifier.Negative'
     ],
 
