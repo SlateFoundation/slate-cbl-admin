@@ -2,11 +2,11 @@ Ext.define('Slate.cbl.admin.controller.Skills', {
     extend: 'Ext.app.Controller',
 
     views: [
-        'skills.Grid'
+        'skills.Grid@Slate.cbl.admin.view'
     ],
 
     stores: [
-        'Skills'
+        'Skills@Slate.cbl.admin.store'
     ],
 
     refs: [{
