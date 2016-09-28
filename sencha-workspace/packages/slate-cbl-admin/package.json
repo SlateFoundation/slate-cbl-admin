@@ -30,6 +30,15 @@
     "type": "code",
 
     /**
+     * The toolkit used by this theme (only for "theme" package type).
+     *
+     * Themes can specify the toolkit they apply to ("classic" or "modern").
+     *
+     *    "toolkit": "classic",
+     */
+    "toolkit": "classic",
+
+     /**
       * The author of the package.
       *
       * Required only if you are distributing this package through a Sencha Cmd repository,
@@ -233,6 +242,7 @@
      *
      *     "framework": "ext",
      */
+    "framework": "ext",
 
     /**
      * Packages can require other packages in the same way that applications can require
