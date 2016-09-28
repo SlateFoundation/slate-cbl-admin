@@ -1,10 +1,7 @@
 Ext.define('Slate.cbl.admin.overrides.SlateAdmin', {
     override: 'SlateAdmin.Application',
     requires: [
-
-        'Slate.cbl.admin.controller.Skills',
-
-        'Slate.cbl.admin.overrides.SettingsNavPanel'
+        'Slate.cbl.admin.controller.Skills'
     ],
 
     initControllers: function() {
