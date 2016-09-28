@@ -1,15 +1,12 @@
 Ext.define('Slate.cbl.admin.overrides.SettingsNavPanel', {
     override: 'SlateAdmin.view.settings.NavPanel',
-    requires: [],
     initComponent: function() {
         var me = this;
-        me.setData(Ext.Array.merge(me.getData(), [
-            {
-                href: '#settings/cbl/skills',
-                text: 'CBL Skills'
-            }
-        ]));
-        return me.callParent(arguments);
+        me.data = me.data.concat({
+            href: '#settings/cbl/skills',
+            text: 'CBL Skills'
+        });
+        me.callParent(arguments);
     }
 });
 
@@ -202,10 +199,10 @@ Ext.define('Slate.cbl.admin.store.Skills', {
 Ext.define('Slate.cbl.admin.controller.Skills', {
     extend: 'Ext.app.Controller',
     views: [
-        'skills.Grid'
+        'skills.Grid@Slate.cbl.admin.view'
     ],
     stores: [
-        'Skills'
+        'Skills@Slate.cbl.admin.store'
     ],
     refs: [
         {
@@ -239,8 +236,7 @@ Ext.define('Slate.cbl.admin.controller.Skills', {
 Ext.define('Slate.cbl.admin.overrides.SlateAdmin', {
     override: 'SlateAdmin.Application',
     requires: [
-        'Slate.cbl.admin.controller.Skills',
-        'Slate.cbl.admin.overrides.SettingsNavPanel'
+        'Slate.cbl.admin.controller.Skills'
     ],
     initControllers: function() {
         this.callParent();
