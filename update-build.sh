@@ -54,10 +54,10 @@ git merge --quiet --no-edit -X theirs $SOURCE_BRANCH
 BUILD_PATH="$PACKAGE_PATH/build"
 if [ -d "$BUILD_PATH" ]; then
     echo "Clearing $BUILD_PATH"
-    rm -R $BUILD_PATH
-else
-    mkdir "$BUILD_PATH"
+    rm -R "$BUILD_PATH"
 fi
+
+mkdir "$BUILD_PATH"
 BUILD_PATH=`cd "$BUILD_PATH"; pwd`
 
 echo "Building package: $PACKAGE_PATH"
