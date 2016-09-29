@@ -9,13 +9,15 @@ Ext.define('Slate.cbl.admin.controller.Skills', {
         'Skills@Slate.cbl.admin.store'
     ],
 
-    refs: [{
-        ref: 'skillsGrid',
-        selector: 'slate-cbl-admin-skillsgrid',
+    refs: {
+        skillsGrid: {
+            selector: 'slate-cbl-admin-skillsgrid',
+            autoCreate: true,
 
-        autoCreate: true,
-        xtype: 'slate-cbl-admin-skillsgrid'
-    }],
+            xtype: 'slate-cbl-admin-skillsgrid'
+        },
+        settingsNavPanel: 'settings-navpanel'
+    },
 
     control: {
         skillsGrid: {
@@ -36,9 +38,20 @@ Ext.define('Slate.cbl.admin.controller.Skills', {
 
     showSkills: function() {
         var me = this,
-            grid = me.getSkillsGrid();
+            grid = me.getSkillsGrid(),
+            navPanel = me.getSettingsNavPanel();
+
+        Ext.suspendLayouts();
+
+        Ext.util.History.suspendState();
+
+        navPanel.setActiveLink('settings/cbl/skills');
+        navPanel.expand();
+        Ext.util.History.resumeState(false); // false to discard any changes to state
 
         me.getApplication().getController('Viewport').loadCard(grid);
         grid.getStore().load();
+
+        Ext.resumeLayouts(true);
     }
 });
