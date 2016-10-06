@@ -1,4 +1,4 @@
- <?php
+<?php
 
 Git::$repositories['slate-cbl-admin'] = [
     'remote' => 'https://github.com/SlateFoundation/slate-cbl-admin.git',
