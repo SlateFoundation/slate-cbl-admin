@@ -89,7 +89,7 @@ Ext.define('Slate.cbl.admin.controller.Skills', {
         form.loadRecord(skill);
         form.setTitle(skill.get('Code'));
         if (skill.isPhantom) {
-            skill.set('DemonstrationsRequired2', []);
+            skill.set('DemonstrationsRequired', []);
         }
         me.syncFormButtons();
     },
@@ -103,7 +103,7 @@ Ext.define('Slate.cbl.admin.controller.Skills', {
         // validate form
         form.updateRecord(skill);
 
-        skill.set('DemonstrationsRequired2', form.getEvidenceRequirements());
+        skill.set('DemonstrationsRequired', form.getEvidenceRequirements());
 
         if (skill.dirty) {
             form.setLoading('Saving skill&hellip;');
@@ -131,7 +131,7 @@ Ext.define('Slate.cbl.admin.controller.Skills', {
             revertBtn = me.getRevertBtn(),
             saveBtn = me.getSaveBtn(),
             addLevelBtn = me.getAddLevelBtn(),
-            evidenceRequirementsDirty = JSON.stringify(form.getRecord().get('DemonstrationsRequired2')) !== JSON.stringify(form.getEvidenceRequirements());
+            evidenceRequirementsDirty = JSON.stringify(form.getRecord().get('DemonstrationsRequired')) !== JSON.stringify(form.getEvidenceRequirements());
 
         addLevelBtn.setDisabled(!Ext.isNumeric(addLevelBtn.prev('numberfield').getValue()))
         revertBtn.setDisabled(!dirty && !evidenceRequirementsDirty);

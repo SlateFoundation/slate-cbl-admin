@@ -102,7 +102,7 @@ Ext.define('Slate.cbl.admin.view.skills.Form', {
 
         evidenceRequirementsCt.removeAll();
 
-        if (record && (requiredDemos = record.get('DemonstrationsRequired2'))) {
+        if (record && (requiredDemos = record.get('DemonstrationsRequired'))) {
             for (key in requiredDemos) {
                 if (requiredDemos.hasOwnProperty(key)) {
                     items.push(Ext.factory({

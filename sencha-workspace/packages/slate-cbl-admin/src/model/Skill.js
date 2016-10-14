@@ -65,7 +65,7 @@ Ext.define('Slate.cbl.admin.model.Skill', {
             name: "Statement",
             type: "string"
         },
-        'DemonstrationsRequired2'
+        'DemonstrationsRequired'
     ],
 
     proxy: {
