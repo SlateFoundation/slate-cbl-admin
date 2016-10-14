@@ -1,7 +1,7 @@
 Ext.define('Slate.cbl.admin.view.skills.Grid', {
     extend: 'Ext.grid.Panel',
     requires: [
-        'Ext.grid.plugin.BufferedRenderer'
+        'Ext.toolbar.Paging'
     ],
 
     xtype: 'cbl-admin-skills-grid',
@@ -9,9 +9,12 @@ Ext.define('Slate.cbl.admin.view.skills.Grid', {
     store: 'Skills',
     height: "100%",
 
-    plugins: {
-        ptype: 'bufferedrenderer'
-    },
+    dockedItems: [{
+        xtype: 'pagingtoolbar',
+        store: 'Skills',
+        dock: 'bottom',
+        displayInfo: true
+    }],
 
     columns: {
         defaults: {
