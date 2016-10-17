@@ -19,6 +19,10 @@ LIB_PATH=`cd $SLATE_ADMIN/sencha-workspace/packages; pwd`
 test -d "$LIB_PATH/$PACKAGE_NAME" || { echo >&2 "$PACKAGE_NAME not found in $LIB_PATH"; exit 1; }
 
 
+# ensure source branch is up-to-date
+git pull --ff origin $SOURCE_BRANCH >/dev/null 2>&1 || { echo >&2 "Could not fast-fwd $SOURCE_BRANCH"; exit 1; }
+
+
 # check next version
 JSON_PATH="$PACKAGE_PATH/package.json"
 test -f "$JSON_PATH" || { echo >&2 "Could not find $JSON_PATH"; exit 1; }
@@ -31,6 +35,9 @@ git rev-parse -q --verify "refs/tags/v$VERSION_NEXT" >/dev/null && { echo >&2 "T
 
 # check that builds branch doesn't have same version already, or create new builds branch
 if git rev-parse -q --verify "$BUILD_BRANCH" ; then
+    # fast forward build branch
+    git fetch origin $BUILD_BRANCH:$BUILD_BRANCH || { echo >&2 "Could not fast-fwd $BUILD_BRANCH"; exit 1; }
+
     VERSION_LAST=`git show $BUILD_BRANCH:$JSON_PATH | underscore extract version --outfmt text`
     echo "Package version in $BUILD_BRANCH: $VERSION_LAST"
 
