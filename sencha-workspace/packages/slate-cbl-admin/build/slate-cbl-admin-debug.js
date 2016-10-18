@@ -84,9 +84,9 @@ Ext.define('Slate.cbl.admin.model.Skill', {
 });
 
 Ext.define('Slate.cbl.admin.store.Skills', {
-    extend: 'Ext.data.BufferedStore',
+    extend: 'Ext.data.Store',
     model: 'Slate.cbl.admin.model.Skill',
-    leadingBufferZone: 100,
+    remoteSort: true,
     pageSize: 50
 });
 
