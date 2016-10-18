@@ -65,31 +65,7 @@ Ext.define('Slate.cbl.admin.model.Skill', {
             name: "Statement",
             type: "string"
         },
-        {
-            name: "FirstLevelDemonstrationsRequired",
-            type: "int",
-            defaultValue: 2
-        },
-        {
-            name: "SecondLevelDemonstrationsRequired",
-            type: "int",
-            defaultValue: 2
-        },
-        {
-            name: "ThirdLevelDemonstrationsRequired",
-            type: "int",
-            defaultValue: 2
-        },
-        {
-            name: "FourthLevelDemonstrationsRequired",
-            type: "int",
-            defaultValue: 2
-        },
-        {
-            name: "DemonstrationsRequired",
-            type: "int",
-            defaultValue: 2
-        }
+        'DemonstrationsRequired'
     ],
 
     proxy: {
