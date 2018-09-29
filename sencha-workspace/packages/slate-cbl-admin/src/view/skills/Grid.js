@@ -26,19 +26,11 @@ Ext.define('Slate.cbl.admin.view.skills.Grid', {
         },{
             dataIndex: 'Descriptor',
             text: 'Descriptor',
-            flex: 5,
-            editor: {
-                xtype: 'textfield',
-                allowBlank: false
-            }
+            flex: 5
         },{
             dataIndex: 'Statement',
             text: 'Statement',
-            flex: 5,
-            editor: {
-                xtype: 'textfield',
-                allowBlank: false
-            }
+            flex: 5
         }]
     }
 });
