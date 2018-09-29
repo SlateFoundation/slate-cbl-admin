@@ -32,7 +32,7 @@ Ext.define('Slate.cbl.admin.view.skills.Form', {
         name: 'Code',
         fieldLabel: 'Code'
     }, {
-        xtype: 'textfield',
+        xtype: 'textareafield',
         name: 'Descriptor',
         fieldLabel: 'Descriptor',
         allowBlank: false
